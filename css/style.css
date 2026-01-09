@@ -17,42 +17,67 @@
 
 /* Light Mode Overrides */
 body.light-mode {
-    --bg-color: #f4f4f5;
-    --text-primary: #18181b;
-    --text-secondary: #52525b;
-    --card-bg: rgba(0, 0, 0, 0.03);
-    /* Dark glass on light bg */
-    --border-color: rgba(0, 0, 0, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --bg-color: #f8fafc;
+    /* Crisp white-blue tint */
+    --text-primary: #1e293b;
+    /* Slate 800 - High contrast */
+    --text-secondary: #475569;
+    /* Slate 600 - Readable grey */
+    --card-bg: rgba(255, 255, 255, 0.7);
+    /* Frosted glass white */
+    --glass-border: rgba(0, 0, 0, 0.1);
+    /* Subtle dark border */
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    /* override default glass-bg */
 }
 
-/* Specific Light Mode Tweaks for components that hardcoded colors */
-body.light-mode .navbar {
-    background: rgba(244, 244, 245, 0.85);
-    /* Light glass */
+/* Ensure ALL texts are readable in light mode */
+body.light-mode .hero-subtitle,
+body.light-mode .role-desc,
+body.light-mode .network-label,
+body.light-mode .output,
+body.light-mode .cmd {
+    color: #334155;
+    /* Darker slate for readability */
 }
 
+/* Background Fixes */
 body.light-mode .work-section,
 body.light-mode .education-section {
-    background: #e4e4e7;
-    /* Slightly darker grey for section contrast */
+    background: #e2e8f0;
+    /* Distinct section bg */
 }
 
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Card Visibility */
+body.light-mode .about-card,
+body.light-mode .project-item,
+body.light-mode .edu-card,
+body.light-mode .network-card {
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+/* Button & Terminal Fixes */
 body.light-mode .terminal-command,
 body.light-mode .cta-button {
-    background: #fff;
-    border-color: #d4d4d8;
-    color: #3f3f46;
+    background: #ffffff;
+    border-color: #cbd5e1;
+    color: #0f172a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-body.light-mode .cmd {
-    color: #18181b;
-}
-
-body.light-mode .project-item:hover,
-body.light-mode .about-card:hover {
-    background: #fff;
-    box-shadow: 0 4px 20px var(--shadow-color);
+/* Fix Hero Gradient visibility in light mode */
+body.light-mode .hero-bg-gradient {
+    background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, .1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 158, 100, .1) 0%, transparent 40%),
+        linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    /* Light gradient base */
 }
 
 * {
