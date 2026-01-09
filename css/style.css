@@ -18,17 +18,15 @@
 /* Light Mode Overrides */
 body.light-mode {
     --bg-color: #f8fafc;
-    /* Crisp white-blue tint */
     --text-primary: #1e293b;
-    /* Slate 800 - High contrast */
     --text-secondary: #475569;
-    /* Slate 600 - Readable grey */
     --card-bg: rgba(255, 255, 255, 0.7);
-    /* Frosted glass white */
     --glass-border: rgba(0, 0, 0, 0.1);
-    /* Subtle dark border */
     --glass-bg: rgba(255, 255, 255, 0.5);
-    /* override default glass-bg */
+
+    /* CRITICAL FIX: Re-apply background and color to use the new variables */
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 /* Ensure ALL texts are readable in light mode */
