@@ -98,6 +98,33 @@ body {
     text-transform: uppercase;
 }
 
+/* Theme Toggle */
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.theme-btn:hover {
+    background: var(--card-bg);
+    transform: rotate(15deg);
+}
+
+body.light-mode .theme-btn {
+    border-color: var(--border-color);
+    color: #f59e0b;
+    /* Sun color */
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
