@@ -54,19 +54,23 @@
 
 /* Network Card */
 .network-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 0.8rem 1.5rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1rem 1.5rem;
+    /* Match terminal padding */
     border-radius: 4px;
     display: flex;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-width: 300px;
+    /* Match terminal width */
 }
 
 .network-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-tech);
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.1);
     transform: translateY(-2px);
 }
 
