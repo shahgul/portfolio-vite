@@ -416,7 +416,8 @@ section {
 
 /* Experience Section */
 .work-section {
-    background: #0d0d0d;
+    /* background: #0d0d0d; Removed for consistency */
+    padding-top: 5rem;
 }
 
 .project-list {
