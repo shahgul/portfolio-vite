@@ -621,21 +621,24 @@ section {
     margin-top: 2rem;
 }
 
-.hero-title {
-    font-size: 3rem;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
 
-.nav-links {
-    display: none;
-}
+    .nav-links {
+        display: none;
+    }
 
-.project-main {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .2rem;
-}
+    .project-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .2rem;
+    }
 
-.company-name {
-    margin-left: 0;
+    .company-name {
+        margin-left: 0;
+    }
 }
 }
