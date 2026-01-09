@@ -17,6 +17,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
   <script src="js/script.js" defer></script>
 </head>
 
@@ -285,10 +286,24 @@
       <div class="container">
         <h2>Ready to Collaborate?</h2>
         <p>Whether you need an API integration strategy or a photographer for your next event.</p>
-        <div class="contact-links">
-          <a href="mailto:ansari.shahgul@gmail.com" class="contact-btn">Initialize Connection</a>
-          <a href="https://linkedin.com/in/shahgul" target="_blank" class="contact-btn secondary">Professional
-            Network</a>
+        <div class="contact-actions">
+          <!-- Terminal Copy Component -->
+          <div class="terminal-command"
+            onclick="navigator.clipboard.writeText('ansari.shahgul@gmail.com'); alert('Email Copied!')">
+            <span class="prompt">></span>
+            <span class="cmd">cp email.txt</span>
+            <span class="output">ansari.shahgul@gmail.com</span>
+            <span class="copy-icon">📋</span>
+          </div>
+
+          <!-- Network Card Component -->
+          <div class="network-card" onclick="window.open('https://linkedin.com/in/shahgul', '_blank')">
+            <div class="network-icon">in</div>
+            <div class="network-info">
+              <span class="network-label">/network/professional</span>
+              <span class="network-status">Status: Online</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

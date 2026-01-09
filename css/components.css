@@ -1,0 +1,129 @@
+/* Contact Actions */
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+/* Terminal Component */
+.terminal-command {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    font-family: monospace;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    min-width: 300px;
+}
+
+.terminal-command:hover {
+    border-color: var(--accent-tech);
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.1);
+}
+
+.prompt {
+    color: var(--accent-tech);
+    font-weight: bold;
+}
+
+.cmd {
+    color: #fff;
+    margin-right: auto;
+}
+
+.output {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.copy-icon {
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+
+.terminal-command:hover .copy-icon {
+    filter: grayscale(0);
+}
+
+/* Network Card */
+.network-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.network-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.network-icon {
+    background: #0077b5;
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.network-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.network-label {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.network-status {
+    font-size: 0.75rem;
+    color: var(--accent-tech);
+    position: relative;
+    padding-left: 10px;
+}
+
+.network-status::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent-tech);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
