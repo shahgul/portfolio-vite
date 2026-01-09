@@ -375,6 +375,7 @@ section {
 .about-card:hover {
     transform: translateY(-5px);
     border-color: #fff3;
+    background: #ffffff0f;
 }
 
 .about-card h3 {
@@ -555,6 +556,18 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+.skill-category {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 2px;
+    transition: background var(--transition-fast);
+}
+
+.skill-category:hover {
+    background: #ffffff0f;
 }
 
 .skill-category h4 {
