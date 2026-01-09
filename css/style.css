@@ -1,15 +1,58 @@
 :root {
+    /* Default Dark Mode */
     --bg-color: #0a0a0a;
     --text-primary: #f0f0f0;
     --text-secondary: #a0a0a0;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.08);
+
     --accent-tech: #00ffc8;
     --accent-art: #ff9e64;
-    --glass-bg: rgba(255, 255, 255, .03);
-    --glass-border: rgba(255, 255, 255, .08);
+
     --font-heading: "Cormorant Garamond", serif;
     --font-body: "Outfit", sans-serif;
     --transition-slow: .6s cubic-bezier(.22, 1, .36, 1);
     --transition-fast: .3s ease;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-color: #f4f4f5;
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --card-bg: rgba(0, 0, 0, 0.03);
+    /* Dark glass on light bg */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Light Mode Tweaks for components that hardcoded colors */
+body.light-mode .navbar {
+    background: rgba(244, 244, 245, 0.85);
+    /* Light glass */
+}
+
+body.light-mode .work-section,
+body.light-mode .education-section {
+    background: #e4e4e7;
+    /* Slightly darker grey for section contrast */
+}
+
+body.light-mode .terminal-command,
+body.light-mode .cta-button {
+    background: #fff;
+    border-color: #d4d4d8;
+    color: #3f3f46;
+}
+
+body.light-mode .cmd {
+    color: #18181b;
+}
+
+body.light-mode .project-item:hover,
+body.light-mode .about-card:hover {
+    background: #fff;
+    box-shadow: 0 4px 20px var(--shadow-color);
 }
 
 * {
