@@ -84,13 +84,15 @@
 
 .network-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
     text-align: left;
 }
 
 .network-label {
     font-family: monospace;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
@@ -99,6 +101,8 @@
     color: var(--accent-tech);
     position: relative;
     padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .network-status::before {
