@@ -472,7 +472,8 @@ section {
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    /* Reduced from 2rem */
 }
 
 .project-item {
@@ -495,7 +496,8 @@ section {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.2rem;
+    /* Significantly reduced */
 }
 
 .project-main h4 {
