@@ -32,6 +32,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Toast Notification System
+    const showToast = (message, type = 'success') => {
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => toast.classList.add('show'), 100);
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    };
+
+    // Email Copy with Toast
+    const emailCopy = document.getElementById('email-copy');
+    if (emailCopy) {
+        emailCopy.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText('ansari.shahgul@gmail.com');
+                showToast('✓ Email copied to clipboard!');
+                setTimeout(() => {
+                    window.location.href = 'mailto:ansari.shahgul@gmail.com';
+                }, 500);
+            } catch (err) {
+                showToast('Failed to copy email', 'error');
+            }
+        });
+    }
+
+
     // Navbar Scroll Effect
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
