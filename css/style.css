@@ -102,7 +102,7 @@ body.light-mode .hero-bg-gradient {
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; Removed to fix snap stutter */
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-primary);
@@ -373,6 +373,8 @@ section {
     flex-direction: column;
     justify-content: center;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
+    /* Force stop at each section */
     /* Snap to top of section */
     scroll-margin-top: 0px;
     /* Adjust if navbar overlaps */
