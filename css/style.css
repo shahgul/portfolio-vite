@@ -1362,8 +1362,23 @@ body.menu-open {
         font-size: 3rem;
     }
 
+    /* Ensure theme toggle is visible on mobile */
+    .theme-btn {
+        position: relative;
+        z-index: 1002;
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-controls {
+        position: relative;
+        z-index: 1002;
+    }
+
     .hamburger {
         display: flex;
+        position: relative;
+        z-index: 1002;
     }
 
     .nav-links {
@@ -1405,5 +1420,15 @@ body.menu-open {
 
     .company-name {
         margin-left: 0;
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer {
+        padding: 3rem 5% 1.5rem;
     }
 }
