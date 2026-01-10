@@ -51,6 +51,23 @@ body.light-mode .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Fix Navbar Text in Light Mode */
+body.light-mode .nav-links a {
+    color: #334155;
+    /* Dark Slate to contrast with white navbar */
+    font-weight: 500;
+}
+
+body.light-mode .nav-links a:hover {
+    color: var(--accent-tech);
+    /* Keep the accent hover */
+}
+
+body.light-mode .logo {
+    color: #0f172a;
+    /* Darkest Slate for Logo */
+}
+
 /* Card Visibility */
 body.light-mode .about-card,
 body.light-mode .project-item,
