@@ -40,11 +40,11 @@ body.light-mode .cmd {
 }
 
 /* Background Fixes */
-body.light-mode .work-section,
+/* Background Fixes - Removed to ensure consistency across all sections */
+/* body.light-mode .work-section,
 body.light-mode .education-section {
     background: #e2e8f0;
-    /* Distinct section bg */
-}
+} */
 
 /* Distinct section bg */
 
