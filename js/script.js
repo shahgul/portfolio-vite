@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Scroll to Top Button
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.className = 'scroll-to-top';
-    scrollTopBtn.innerHTML = '↑';
+    scrollTopBtn.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+        </svg>
+    `;
     scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollTopBtn);
 
@@ -252,12 +257,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Safety check if button exists
     if (themeBtn) {
-        const icon = themeBtn.querySelector('.icon');
+        // Create moon icon SVG
+        const moonIcon = `
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        `;
+
+        const sunIcon = `
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        `;
 
         // Check saved theme
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
-            icon.textContent = '🌙';
+            themeBtn.innerHTML = moonIcon;
         }
 
         themeBtn.addEventListener('click', () => {
@@ -265,10 +289,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (body.classList.contains('light-mode')) {
                 localStorage.setItem('theme', 'light');
-                icon.textContent = '🌙';
+                themeBtn.innerHTML = moonIcon;
             } else {
                 localStorage.setItem('theme', 'dark');
-                icon.textContent = '☀️';
+                themeBtn.innerHTML = sunIcon;
             }
         });
     }

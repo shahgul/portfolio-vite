@@ -43,15 +43,6 @@
     font-size: 0.9em;
 }
 
-.copy-icon {
-    filter: grayscale(1);
-    transition: 0.3s;
-}
-
-.terminal-command:hover .copy-icon {
-    filter: grayscale(0);
-}
-
 /* Network Card */
 .network-card {
     background: #1a1a1a;
