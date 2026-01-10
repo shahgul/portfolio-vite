@@ -107,6 +107,11 @@ html {
     background-color: var(--bg-color);
     color: var(--text-primary);
     overflow-x: hidden;
+
+    /* Scroll Snapping */
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 body {
@@ -361,6 +366,16 @@ body.light-mode .theme-btn {
 /* Sections General */
 section {
     padding: 8rem 5%;
+    min-height: 100vh;
+    /* Ensure full viewport height */
+    display: flex;
+    /* Center content vertically if desired, or keep block */
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    /* Snap to top of section */
+    scroll-margin-top: 0px;
+    /* Adjust if navbar overlaps */
 }
 
 .container {
