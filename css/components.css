@@ -135,3 +135,35 @@
         opacity: 1;
     }
 }
+
+/* Light Mode Component Styles */
+body.light-mode .prompt {
+    color: #0891b2;
+}
+
+body.light-mode .cmd {
+    color: #0f172a;
+}
+
+body.light-mode .network-status {
+    color: #0891b2;
+}
+
+body.light-mode .network-status::before {
+    background: #0891b2;
+}
+
+body.light-mode .network-icon {
+    background: #0077b5;
+    box-shadow: 0 2px 8px rgba(0, 119, 181, 0.2);
+}
+
+body.light-mode .terminal-command:hover {
+    border-color: #0891b2;
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
+}
+
+body.light-mode .network-card:hover {
+    border-color: #0891b2;
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
+}
