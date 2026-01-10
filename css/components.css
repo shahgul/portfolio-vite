@@ -1,11 +1,15 @@
 /* Contact Actions */
 .contact-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Terminal Component */
@@ -75,6 +79,22 @@
     justify-content: center;
     font-weight: bold;
     border-radius: 4px;
+}
+
+.linkedin-icon {
+    background: #0077b5;
+}
+
+.github-icon {
+    background: #333;
+}
+
+.twitter-icon {
+    background: #1DA1F2;
+}
+
+body.light-mode .github-icon {
+    background: #24292e;
 }
 
 .network-info {
