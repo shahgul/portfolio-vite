@@ -490,7 +490,8 @@ section {
     overflow: hidden;
     cursor: pointer;
     border-radius: 2px;
-    transition: transform var(--transition-fast);
+    border: 1px solid var(--glass-border); /* Added consistent border */
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .gallery-item:hover {
