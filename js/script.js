@@ -64,13 +64,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    // Typing Animation for Hero
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        const originalText = heroSubtitle.textContent;
+        heroSubtitle.textContent = '';
+        heroSubtitle.style.opacity = '1';
+
+        let charIndex = 0;
+        const typingSpeed = 50;
+        const startDelay = 800;
+
+        setTimeout(() => {
+            const typeChar = () => {
+                if (charIndex < originalText.length) {
+                    heroSubtitle.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, typingSpeed);
+                } else {
+                    // Add blinking cursor after typing
+                    heroSubtitle.innerHTML += '<span class="typing-cursor">|</span>';
+                }
+            };
+            typeChar();
+        }, startDelay);
+    }
+
     // Navbar Scroll Effect
     const navbar = document.querySelector(".navbar");
+    const heroGradient = document.querySelector('.hero-bg-gradient');
+
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
+        const scrollY = window.scrollY;
+
+        // Navbar effect
+        if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+
+        // Parallax effect for hero
+        if (heroGradient && scrollY < window.innerHeight) {
+            heroGradient.style.transform = `translateY(${scrollY * 0.5}px)`;
+            heroGradient.style.opacity = 1 - (scrollY / window.innerHeight);
         }
     });
 
@@ -136,6 +173,79 @@ document.addEventListener("DOMContentLoaded", () => {
         el.style.transition = "all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)";
         observer.observe(el);
     });
+
+    // Stagger Animation for Achievement Lists
+    const achievementLists = document.querySelectorAll('.achievements-list');
+    const achievementObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const items = entry.target.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }, index * 100);
+                });
+                achievementObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    achievementLists.forEach(list => {
+        const items = list.querySelectorAll('li');
+        items.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = 'all 0.5s ease';
+        });
+        achievementObserver.observe(list);
+    });
+
+    // Gallery Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-info"></div>
+        </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const title = item.querySelector('.overlay-content span').textContent;
+            const description = item.querySelector('.overlay-content p').textContent;
+            const bgStyle = window.getComputedStyle(item).backgroundImage ||
+                window.getComputedStyle(item).background;
+
+            lightbox.querySelector('.lightbox-content').style.background = bgStyle;
+            lightbox.querySelector('.lightbox-info').innerHTML = `
+                <h3>${title}</h3>
+                <p>${description}</p>
+            `;
+            lightbox.classList.add('active');
+            body.classList.add('menu-open');
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        body.classList.remove('menu-open');
+    };
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+
     // Theme Toggle Logic
     const themeBtn = document.getElementById('theme-toggle');
     const body = document.body;
