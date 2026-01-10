@@ -490,7 +490,8 @@ section {
     overflow: hidden;
     cursor: pointer;
     border-radius: 2px;
-    border: 1px solid var(--glass-border); /* Added consistent border */
+    border: 1px solid var(--glass-border);
+    /* Added consistent border */
     transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -655,5 +656,4 @@ section {
     .company-name {
         margin-left: 0;
     }
-}
 }
