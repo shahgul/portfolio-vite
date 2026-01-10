@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Scroll Progress Indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+
+    // Scroll to Top Button
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.className = 'scroll-to-top';
+    scrollTopBtn.innerHTML = '↑';
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollTopBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // Navbar Scroll Effect
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
@@ -25,6 +58,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // Active Navigation Highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinkElements = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const highlightNav = () => {
+        const scrollY = window.scrollY;
+
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinkElements.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    };
+
+    window.addEventListener('scroll', highlightNav);
 
     // Intersection Observer for scroll animations
     const animatedElements = document.querySelectorAll(".about-card, .project-item, .gallery-item");
@@ -69,6 +127,36 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 localStorage.setItem('theme', 'dark');
                 icon.textContent = '☀️';
+            }
+        });
+    }
+
+    // Mobile Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
             }
         });
     }
