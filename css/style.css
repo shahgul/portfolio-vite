@@ -492,6 +492,7 @@ body.light-mode .navbar.scrolled {
     justify-content: center;
     transition: all 0.3s ease;
     font-size: 1.2rem;
+    padding: 0;
 }
 
 .theme-btn:hover {
@@ -499,12 +500,103 @@ body.light-mode .navbar.scrolled {
     transform: rotate(15deg);
 }
 
+/* Theme Icon Styles */
+.theme-icon {
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.sun-icon {
+    color: #f59e0b;
+    animation: rotate 20s linear infinite;
+}
+
+.moon-icon {
+    color: #60a5fa;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 body.light-mode .theme-btn {
     border-color: var(--border-color);
     color: #f59e0b;
-    /* Sun color */
 }
 
+/* Section Icons */
+.section-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.tech-card .section-icon {
+    color: var(--accent-tech);
+}
+
+.art-card .section-icon {
+    color: var(--accent-art);
+}
+
+body.light-mode .tech-card .section-icon {
+    color: #0891b2;
+}
+
+body.light-mode .art-card .section-icon {
+    color: #ea580c;
+}
+
+.about-card:hover .section-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Button Icons */
+.btn-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    color: var(--accent-art);
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .btn-icon {
+    transform: translateY(2px);
+}
+
+body.light-mode .btn-icon {
+    color: #ea580c;
+}
+
+/* Copy Icon */
+.copy-icon {
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    color: var(--text-secondary);
+}
+
+.terminal-command:hover .copy-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    color: var(--accent-tech);
+}
+
+body.light-mode .copy-icon {
+    color: #475569;
+}
+
+body.light-mode .terminal-command:hover .copy-icon {
+    color: #0891b2;
+}
+
+/* Scroll to Top Button */
 .nav-links {
     display: flex;
     gap: 2rem;

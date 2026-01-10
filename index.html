@@ -51,7 +51,18 @@
       </ul>
       <div class="nav-controls" style="display: flex; align-items: center; gap: 1rem;">
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Day Mode">
-          <span class="icon">☀️</span>
+          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
         </button>
         <div class="hamburger">
           <span></span>
@@ -76,7 +87,13 @@
             <span style="color: var(--accent-tech); margin-right: 5px;">></span> cd ./work
           </a>
           <a href="ShahGul_Resume_Q1_2026.pdf" class="cta-button secondary" download>
-            <span style="color: var(--accent-art); margin-right: 5px;">⬇</span> wget resume.pdf
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            wget resume.pdf
           </a>
         </div>
       </div>
@@ -91,7 +108,13 @@
         </div>
         <div class="about-grid">
           <div class="about-card tech-card">
-            <h3><span class="icon">⚡</span> The Engineer</h3>
+            <h3>
+              <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+              The Engineer
+            </h3>
             <p>
               With over <strong>6.5 years</strong> of experience in the trenches of enterprise software,
               I specialize in making disparate systems talk to each other.
@@ -101,7 +124,14 @@
             </p>
           </div>
           <div class="about-card art-card">
-            <h3><span class="icon">📷</span> The Photographer</h3>
+            <h3>
+              <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              The Photographer
+            </h3>
             <p>
               When the terminal closes, the shutter opens. shooting with a <strong>Sony a6600</strong>,
               I explore the intersection of light, shadow, and human emotion.
@@ -318,7 +348,11 @@
           <div class="terminal-command" id="email-copy">
             <span class="prompt">></span>
             <span class="cmd">cp email.txt</span>
-            <span class="copy-icon">📋</span>
+            <svg class="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
           </div>
 
           <!-- Network Card Component -->
