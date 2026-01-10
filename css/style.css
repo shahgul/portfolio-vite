@@ -646,9 +646,11 @@ section {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    /* Drastically reduced from 1.5rem */
     border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    /* Reduced padding */
 }
 
 .achievements-list {
