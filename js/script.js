@@ -3,11 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-            navbar.style.background = "rgba(10, 10, 10, 0.95)";
-            navbar.style.boxShadow = "0 2px 20px rgba(0,0,0,0.5)";
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = "rgba(10, 10, 10, 0.7)";
-            navbar.style.boxShadow = "none";
+            navbar.classList.remove('scrolled');
         }
     });
 

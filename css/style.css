@@ -46,10 +46,10 @@ body.light-mode .education-section {
     /* Distinct section bg */
 }
 
-body.light-mode .navbar {
-    background: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+/* Distinct section bg */
 }
+
+/* Removed redundant .navbar rule here as it is now handled with .scrolled states below */
 
 /* Fix Navbar Text in Light Mode */
 body.light-mode .nav-links a {
@@ -125,8 +125,27 @@ body {
     z-index: 1000;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background: #0a0a0ab3;
+    background: rgba(10, 10, 10, 0.7);
+    /* Default transparent dark */
     border-bottom: 1px solid var(--glass-border);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scrolled State (Dark Mode) */
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Light Mode Scrolled State Override */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    /* Default transparent light */
+}
+
+body.light-mode .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
